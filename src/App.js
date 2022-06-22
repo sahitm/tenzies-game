@@ -4,28 +4,23 @@ import './App.css'
 
 
 export default function App() {
-    
-    const array = [1,2,3,4,5,6]
-    const [num , setNum ] = React.useState(1)
-    
-    function handleChange(){
-        const newNum = array[Math.floor(Math.random()*6)]
-        setNum(prevNum => newNum)
+
+    function allNewDice(){
+        const newDice = []
+        for(let i=0;i<10;i++){
+          newDice.push(Math.ceil(Math.random()*6))
+        }
+        return newDice
     }
+
+    const [diceNum,SetDiceNum] = React.useState(allNewDice())
+
+    const diceElements = diceNum.map(dienum => <Die num={dienum}/>)
     
     return (
         <main className="main">
             <div className="container">
-                <Die num={num} handleChange={handleChange}/>
-                <Die num={num} handleChange={handleChange}/>
-                <Die num={num} handleChange={handleChange}/>
-                <Die num={num} handleChange={handleChange}/>
-                <Die num={num} handleChange={handleChange}/>
-                <Die num={num} handleChange={handleChange}/>
-                <Die num={num} handleChange={handleChange}/>
-                <Die num={num} handleChange={handleChange}/>
-                <Die num={num} handleChange={handleChange}/>
-                <Die num={num} handleChange={handleChange}/>
+                {diceElements}
             </div>
         </main>
     )
