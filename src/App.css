@@ -1,0 +1,16 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #0B2434;
+}
+
+main {
+    background-color: #F5F5F5;
+    height: 90vh;
+    width: 90vw;
+    margin: 5vh 5vw;
+    border-radius: 5px;
+}
