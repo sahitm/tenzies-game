@@ -6,22 +6,32 @@ import {nanoid} from 'nanoid'
 
 export default function App() {
 
-    function allNewDice(){
-        const newDice = []
-        for(let i=0;i<10;i++){
-          newDice.push({
+    function generateNewDice(){
+        return {
             value:Math.ceil(Math.random()*6),
             isHeld: false,
             id: nanoid()
-        })
+        }
+    }
+
+    function allNewDice(){
+        const newDice = []
+        for(let i=0;i<10;i++){
+          newDice.push(generateNewDice())
         }
         return newDice
     }
 
     const [diceNum,SetDiceNum] = React.useState(allNewDice())
 
-    function changeNum(){
-      SetDiceNum(allNewDice())
+
+    function rollDice(){
+        SetDiceNum(oldDice => oldDice.map(dice => {
+            return dice.isHeld ?
+                   dice :
+                   generateNewDice()
+                   
+        }))
     }
 
     function holdDie(id){
@@ -46,7 +56,7 @@ export default function App() {
             <div className="container">
                 {diceElements}
             </div>
-            <button className="roll--btn" onClick={changeNum}>Roll</button>
+            <button className="roll--btn" onClick={rollDice}>Roll</button>
         </main>
     )
 }
