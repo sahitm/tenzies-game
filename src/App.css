@@ -13,6 +13,11 @@ main {
     width: 90vw;
     margin: 5vh 5vw;
     border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items:center;
+    padding: 20px;
 }
 
 .container{
@@ -20,18 +25,40 @@ main {
     grid-template-columns: repeat(5,1fr);
     grid-template-rows: repeat(2,1fr) ;
     grid-gap: 15px;
-    width: 90%;
-    margin: auto;
-    padding: 20vw 10vh;
+    
 }
 
 .die--box{
     background: #FFFFFF;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
     border-radius: 3.81277px;
-    height: 35px;
-    width: 35px;
+    height: 50px;
+    width: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 2.5rem;
 }
+
+.roll--btn {
+	box-shadow:inset 0px -3px 7px 0px #5035FF;
+    ;
+	background:linear-gradient(to bottom, #5035FF 5%, #5035FF 100%);
+	background-color:#5035FF;
+	border-radius:3px;
+	border:1px solid #0b0e07;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	padding:9px 23px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #263666;
+}
+
+.roll--btn:active {
+	position:relative;
+	top:1px;
+}
+

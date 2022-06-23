@@ -2,12 +2,13 @@ import React from 'react'
 
 export default function Die(props){
 
-    const array = [1,2,3,4,5,6]
-    const Randomnum = array[Math.floor(Math.random()*6)]
+    const styles = {
+        backgroundColor : props.isHeld ? "#59E391" : "white" 
+    }
 
     return (
-        <div className="die--box" onClick={props.handleChange}>
-            {Randomnum}
+        <div className="die--box" style={styles} onClick={props.holdDie} >
+            {props.num}
         </div>
     )
 }
