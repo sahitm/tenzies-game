@@ -1,5 +1,10 @@
 {
   "dependencies": {
     "react-confetti": "^6.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "./node_modules/.bin/netlify-lambda serve src",
+    "build": "react-scripts build"
   }
 }
